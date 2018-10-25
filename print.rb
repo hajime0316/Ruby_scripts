@@ -26,10 +26,10 @@ end
 
 # Hash method
 sym = :foo
-puts sym
-p sym
-p sym.to_s
-p "fuga".to_sym
+p sym           #=> :foo
+puts sym        #=> "foo"
+p sym.to_s      #=> "foo"
+p "foo".to_sym  #=> ;foo
 
 song ={:title => "シャルル", :artist => "バルーン"}
 
@@ -43,3 +43,16 @@ end
 # シンボルはpメソッドで表示するとシンボル、
 # そうでないときは普通の文字列として表示される
 # 要するに普段は文字列として扱われる模様
+
+sym1 = :foo
+sym2 = :foo
+p sym1.object_id  #=> 496340
+p sym2.object_id  #=> 496340
+
+str1 = "foo"
+str2 = "foo"
+p str1.object_id  #=> 32323284
+p str2.object_id  #=> 32323272
+
+a, b, *c = 1, 2, 3, 4, 5
+p [a, b, c]
