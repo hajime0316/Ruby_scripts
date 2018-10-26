@@ -56,3 +56,15 @@ p str2.object_id  #=> 32323272
 
 a, b, *c = 1, 2, 3, 4, 5
 p [a, b, c]
+
+p String === "foo"    #=> true
+p Numeric === 12345   #=> true
+p Symbol === :foo     #=> true
+
+p 100 == 100    #=> true
+p 100 === 100   #=> true
+
+p (1..10) == 5    #=> false
+p (1..10) === 5   #=> true
+
+p (a..z) === "z"  #=> true
