@@ -13,3 +13,25 @@ array.each do |value|
 end
 
 #=> hoge is a String  123 is a Numeric  foo is a Symbol
+
+def myloop
+  while true
+    yield
+  end
+end
+
+i = 0;
+myloop do
+  puts i
+  i += 1
+  if i > 10
+    break
+  end
+end
+
+def test(a: 0, b: 0, c: 0)
+  return a * b * c
+end
+
+p test(a: 1, b: 2)
+p test(a: 1, b: 2, c: 3)
