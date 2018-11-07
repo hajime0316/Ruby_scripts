@@ -35,22 +35,26 @@
 # bob.hello
 # puts bob.name
 
-class SeeYou
-  def initialize(myname)
+class Comment
+
+  attr_accessor :myname, :comment
+
+  def initialize(myname, comment)
     @myname = myname
+    @comment = comment
   end
 
-  def seeyou
-    puts "See you, #{@myname}"
+  def talk
+    puts "#{@comment}, #{@myname}"
   end
 
-  attr_accessor :name
 
 end
 
-bob = SeeYou.new("Bob")
-bob.seeyou
-puts bob.name
-bob.name = "Kaito"
-puts bob.name
-bob.seeyou
+bob = Comment.new("Bob", "Hello")
+bob.talk
+puts bob.myname
+bob.myname = "Kaito"
+puts bob.myname
+bob.comment = "See you"
+puts bob.talk
